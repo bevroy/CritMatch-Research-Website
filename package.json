@@ -1,0 +1,7 @@
+{
+  "name": "critmatch-research-website",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix critmatch-branded-website install && npm --prefix critmatch-branded-website run build"
+  }
+}
