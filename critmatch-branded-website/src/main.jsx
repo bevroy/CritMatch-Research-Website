@@ -224,12 +224,54 @@ function App() {
       </section>
 
       <section id="contact" className="cta">
-        <div>
-          <span className="eyebrow small">Ready to pilot?</span>
-          <h2>Bring faster cohort identification to clinical research workflows.</h2>
-          <p>Contact Elionyx Health to discuss CritMatch partnerships, pilots, and research site deployment.</p>
+        <div className="ctaBody">
+          <div>
+            <span className="eyebrow small">Ready to pilot?</span>
+            <h2>Bring faster cohort identification to clinical research workflows.</h2>
+            <p>Submit your details and the Elionyx Health team will follow up on partnerships and pilot deployment.</p>
+          </div>
+
+          <form
+            className="contactForm"
+            name="contact"
+            method="POST"
+            action="/?submitted=true"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <p className="hpField">
+              <label>
+                Do not fill this out if you are human: <input name="bot-field" />
+              </label>
+            </p>
+
+            <label>
+              Name
+              <input type="text" name="name" required />
+            </label>
+
+            <label>
+              Work Email
+              <input type="email" name="email" required />
+            </label>
+
+            <label>
+              Organization
+              <input type="text" name="organization" />
+            </label>
+
+            <label>
+              Message
+              <textarea name="message" rows="4" required />
+            </label>
+
+            <button className="primaryBtn" type="submit">
+              Request Demo
+              <ArrowRight size={18} />
+            </button>
+          </form>
         </div>
-        <a className="primaryBtn" href="mailto:contact@elionyxhealth.com">Contact Us <ArrowRight size={18} /></a>
       </section>
 
       <footer>
