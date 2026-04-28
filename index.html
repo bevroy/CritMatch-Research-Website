@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CritMatch accelerates clinical trial recruitment by identifying eligible patients directly within EHR workflows using real-time data."
+    />
+    <title>CritMatch Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header" id="top">
+      <a class="logo" href="#top" aria-label="CritMatch Research home">
+        <span class="logo-mark">
+          <img class="logo-image" src="assets/critmatch-logo.png" alt="CritMatch logo" />
+        </span>
+        <span class="logo-text">CritMatch Research</span>
+      </a>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">
+        Menu
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <a href="#problem">Problem</a>
+        <a href="#product">Product</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero reveal">
+        <p class="kicker">Healthcare research technology</p>
+        <h1>
+          Accelerate clinical trial recruitment
+          <span class="accent">from within the EHR</span>.
+        </h1>
+        <p class="hero-copy">
+          CritMatch helps health systems, researchers, and sponsors instantly identify eligible
+          patients for clinical trials and research studies using real-time EHR data.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Request a demo</a>
+          <a class="btn btn-ghost" href="#contact">Partner with us</a>
+        </div>
+      </section>
+
+      <section id="problem" class="panel reveal">
+        <div class="panel-heading">
+          <p class="kicker">Problem</p>
+          <h2>Clinical trial recruitment is still an operational bottleneck</h2>
+        </div>
+        <div class="grid three-up">
+          <article>
+            <h3>Enrollment Delays</h3>
+            <p>
+              Up to 80% of trials face enrollment delays, causing costly timeline risk for research
+              teams and sponsors.
+            </p>
+          </article>
+          <article>
+            <h3>Manual Workload</h3>
+            <p>
+              Manual chart review consumes valuable staff time that should be focused on patient
+              engagement and study execution.
+            </p>
+          </article>
+          <article>
+            <h3>Missed Patients</h3>
+            <p>
+              Eligible participants are often missed when cohort identification is disconnected from
+              day-to-day EHR workflows.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="product" class="split reveal">
+        <div>
+          <p class="kicker">Product</p>
+          <h2>Intelligent cohort discovery embedded directly into care workflows</h2>
+        </div>
+        <ul>
+          <li>Custom inclusion and exclusion criteria</li>
+          <li>ICD-10, CPT, and SNOMED-powered search support</li>
+          <li>Clinical synonym expansion for stronger match coverage</li>
+          <li>Real-time cohort reporting with Epic and Oracle Health integration</li>
+        </ul>
+      </section>
+
+      <section id="how-it-works" class="panel reveal">
+        <div class="panel-heading">
+          <p class="kicker">How It Works</p>
+          <h2>Five practical steps from criteria to activation</h2>
+        </div>
+        <ul>
+          <li>Enter inclusion and exclusion criteria.</li>
+          <li>Select structured and unstructured clinical data sources.</li>
+          <li>Run intelligent patient search.</li>
+          <li>Review eligible patients and validate matches.</li>
+          <li>Export reports or route results to study teams.</li>
+        </ul>
+      </section>
+
+      <section id="about" class="panel reveal">
+        <div class="panel-heading">
+          <p class="kicker">About Elionyx Health</p>
+          <h2>Built by a team focused on diagnostic and research efficiency</h2>
+        </div>
+        <p>
+          Elionyx Health is the parent company behind CritMatch and RealDiag. We build AI-enabled
+          healthcare infrastructure that improves diagnostic accuracy and research performance.
+        </p>
+      </section>
+
+      <section class="panel reveal">
+        <div class="panel-heading">
+          <p class="kicker">Why CritMatch Wins</p>
+          <h2>Designed for speed, transparency, and workflow fit</h2>
+        </div>
+        <p>
+          Compared with TriNetX, Deep 6 AI, Epic SlicerDicer, and Oracle Health tools, CritMatch
+          is differentiated by EHR-embedded workflow, flexible cohort logic, transparent criteria
+          building, and faster deployment.
+        </p>
+      </section>
+
+      <section id="contact" class="contact reveal">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2>Schedule a demo or discuss a partnership</h2>
+          <p>
+            We work with health systems, academic medical centers, and pharma sponsors. Reach our
+            team at
+            <a href="mailto:contact@elionyxhealth.com">contact@elionyxhealth.com</a>.
+          </p>
+        </div>
+
+        <form class="contact-form" action="#" method="post" novalidate>
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Ada Lovelace" required />
+          </label>
+          <label>
+            Work email
+            <input type="email" name="email" placeholder="ada@organization.com" required />
+          </label>
+          <label>
+            Organization type
+            <textarea
+              name="message"
+              rows="4"
+              placeholder="Health system, academic medical center, pharma sponsor, or other."
+            ></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Send request</button>
+          <p class="form-note">Demo form only. Connect this to Formspree, Netlify Forms, or your backend.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <span class="footer-brand-mark">
+          <img class="logo-image" src="assets/critmatch-logo.png" alt="CritMatch logo" />
+        </span>
+        © <span id="year"></span> CritMatch Research. All rights reserved.
+      </p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
