@@ -5,12 +5,17 @@ import {
   ArrowRight,
   BarChart3,
   CheckCircle2,
+  ClipboardList,
   Database,
+  DollarSign,
   FileSearch,
+  FileSpreadsheet,
   Hospital,
   Layers,
+  LineChart,
   Lock,
   Network,
+  Puzzle,
   Search,
   ShieldCheck,
   Sparkles,
@@ -21,24 +26,35 @@ import "./styles.css";
 
 const features = [
   {
-    icon: <Search />,
-    title: "Criteria-Based Matching",
-    text: "Build patient searches from inclusion and exclusion criteria using structured EHR data."
+    icon: <Puzzle />,
+    title: "Cohort Builder",
+    text: "The core of CritMatch. Define inclusion and exclusion criteria, expand them with terminology services, and run them against the EHR to surface candidate participants for your trial.",
+    primary: true
   },
   {
-    icon: <Sparkles />,
-    title: "Clinical Variation Expansion",
-    text: "Optionally include synonymous clinical terms such as heart attack and myocardial infarction."
+    icon: <ClipboardList />,
+    title: "Studies",
+    text: "Organize trials, protocols, and sites in one place — with PI / Sub-I assignments that scope downstream feasibility, EDC, and finance activity."
   },
   {
-    icon: <Database />,
-    title: "Multi-Code Support",
-    text: "Designed to support ICD-10, CPT, SNOMED, labs, medications, demographics, and encounter history."
+    icon: <LineChart />,
+    title: "Feasibility",
+    text: "Answer trial feasibility questionnaires directly from EMR data. When attached to a study, results are scoped to the assigned PI / Sub-I providers' patients."
   },
   {
-    icon: <Hospital />,
-    title: "EHR Workflow Alignment",
-    text: "Built for future launch inside existing Epic and Oracle Health workflows."
+    icon: <FileSpreadsheet />,
+    title: "EDC",
+    text: "Build data-collection forms, identify enrolled participants, and pull data points directly from the EMR with a full Part 11 audit trail."
+  },
+  {
+    icon: <DollarSign />,
+    title: "Finance (CTFMS)",
+    text: "Track sponsor budgets, accruals from EDC visits, invoicing and payments, and patient stipends across all of your studies."
+  },
+  {
+    icon: <BarChart3 />,
+    title: "Results",
+    text: "Review, validate, and export cohort and study outputs — with reporting designed for both research operations and study teams."
   }
 ];
 
@@ -159,11 +175,16 @@ function App() {
       <section id="product" className="features">
         <div className="sectionHead">
           <span className="eyebrow small">The platform</span>
-          <h2>Transparent cohort matching for research operations.</h2>
+          <h2>An end-to-end clinical research platform.</h2>
+          <p>
+            CritMatch now spans the full study lifecycle — from cohort discovery to feasibility,
+            EDC, and finance — anchored by the Cohort Builder at its core.
+          </p>
         </div>
         <div className="featureGrid">
           {features.map((f) => (
-            <div className="featureCard" key={f.title}>
+            <div className={f.primary ? "featureCard primary" : "featureCard"} key={f.title}>
+              {f.primary && <span className="featureBadge">Core feature</span>}
               <div className="iconWrap">{f.icon}</div>
               <h3>{f.title}</h3>
               <p>{f.text}</p>

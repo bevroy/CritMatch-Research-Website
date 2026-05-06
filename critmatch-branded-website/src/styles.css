@@ -319,8 +319,38 @@ p { color: var(--muted); line-height: 1.65; font-size: 17px; }
 .statGrid strong { display: block; font-size: 22px; margin-bottom: 10px; }
 .statGrid span { color: var(--muted); }
 
-.featureGrid { grid-template-columns: repeat(4, 1fr); }
-.featureCard { padding: 28px; }
+.featureGrid { grid-template-columns: repeat(3, 1fr); }
+.featureCard { padding: 28px; position: relative; }
+
+@media (max-width: 1100px) {
+  .featureGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.featureCard.primary {
+  background: linear-gradient(180deg, rgba(39,195,180,0.18), rgba(39,195,180,0.06));
+  border: 1px solid rgba(39,195,180,0.45);
+  box-shadow: 0 28px 80px rgba(39,195,180,0.18);
+}
+
+.featureCard.primary .iconWrap {
+  background: linear-gradient(135deg, var(--teal), var(--cyan));
+  color: #041118;
+}
+
+.featureBadge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(39,195,180,0.18);
+  color: var(--cyan);
+  border: 1px solid rgba(39,195,180,0.45);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
 .iconWrap {
   width: 48px;
   height: 48px;
