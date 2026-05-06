@@ -298,7 +298,7 @@ function App() {
       </section>
 
       <footer>
-        <span>© 2026 CritMatch — Powered by Elionyx Health.</span>
+        <span>© 2026 CritMatch — Powered by Elionyx Health, LLC.</span>
       </footer>
     </main>
   );
