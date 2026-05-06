@@ -30,21 +30,28 @@ main { overflow: hidden; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 6vw;
+  gap: 24px;
+  padding: 28px 6vw;
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(16px);
-  background: rgba(6, 24, 39, 0.76);
-  border-bottom: 1px solid var(--border);
+  background: linear-gradient(
+    90deg,
+    #061827 0%,
+    #0a2236 28%,
+    #15473f 62%,
+    #1f6f63 100%
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  min-height: 150px;
 }
 
-.brand { display: flex; align-items: center; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 22px; }
 
 .brand > div:last-child {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 6px;
 }
 
 .brandMark {
@@ -73,8 +80,16 @@ main { overflow: hidden; }
 }
 
 .nav .brandMark {
-  width: 48px;
-  height: 48px;
+  width: 132px;
+  height: 132px;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  padding: 12px;
+}
+
+.nav .brandMark .brandLogo {
+  padding: 0;
 }
 
 .brandName {
@@ -91,8 +106,18 @@ main { overflow: hidden; }
   line-height: 1.1;
 }
 
+.nav .brandName {
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
 .nav .brandSub {
-  color: color-mix(in oklab, var(--muted) 88%, var(--cyan) 12%);
+  font-size: clamp(14px, 1.2vw, 17px);
+  color: var(--teal);
+  font-weight: 500;
+  letter-spacing: 0.1px;
 }
 
 .footerBrand .brandName {
@@ -105,8 +130,47 @@ main { overflow: hidden; }
   color: color-mix(in oklab, var(--muted) 92%, var(--white) 8%);
 }
 
-.navLinks { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: 14px; }
-.navCta { color: var(--white); border: 1px solid var(--border); padding: 10px 15px; border-radius: 999px; }
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.navLinks a {
+  color: #ffffff;
+  opacity: 0.92;
+  transition: opacity 0.2s ease;
+}
+
+.navLinks a:hover { opacity: 1; }
+
+.navCta {
+  color: var(--navy);
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  opacity: 1;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.navCta:hover {
+  opacity: 1;
+  background: #f4fbfa;
+}
+
+@media (max-width: 820px) {
+  .nav { min-height: auto; padding: 18px 6vw; gap: 12px; flex-wrap: wrap; }
+  .nav .brandMark { width: 72px; height: 72px; border-radius: 16px; padding: 8px; }
+  .nav .brandName { font-size: 22px; }
+  .nav .brandSub { font-size: 12px; }
+  .navLinks { gap: 18px; font-size: 14px; }
+  .navCta { padding: 8px 16px; }
+}
 
 .hero {
   min-height: 760px;

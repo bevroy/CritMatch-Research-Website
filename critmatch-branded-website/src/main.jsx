@@ -68,7 +68,7 @@ function App() {
           </div>
           <div>
             <div className="brandName">CritMatch</div>
-            <div className="brandSub">An Elionyx Health platform</div>
+            <div className="brandSub">Clinical Trial Recruitment Intelligence</div>
           </div>
         </div>
         <div className="navLinks">
@@ -76,7 +76,7 @@ function App() {
           <a href="#workflow">Workflow</a>
           <a href="#demo">Demo</a>
           <a href="#partners">Partners</a>
-          <a href="#contact" className="navCta">Request Demo</a>
+          <a href="#contact" className="navCta">Contact</a>
         </div>
       </nav>
 
