@@ -221,8 +221,24 @@ p { color: var(--muted); line-height: 1.65; font-size: 17px; }
 }
 .progressRows b { color: var(--teal); }
 
-.problem, .features, .workflow, .positioning, .partners, .cta {
+.problem, .features, .workflow, .positioning, .partners, .cta, .demo {
   padding: 92px 6vw;
+}
+
+.demoShell {
+  max-width: 1040px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0b0d12;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.demoVideo {
+  width: 100%;
+  display: block;
+  max-height: 70vh;
 }
 
 .sectionHead { text-align: center; max-width: 840px; margin: 0 auto 38px; }

@@ -74,6 +74,7 @@ function App() {
         <div className="navLinks">
           <a href="#product">Product</a>
           <a href="#workflow">Workflow</a>
+          <a href="#demo">Demo</a>
           <a href="#partners">Partners</a>
           <a href="#contact" className="navCta">Request Demo</a>
         </div>
@@ -188,6 +189,28 @@ function App() {
               <CheckCircle2 />
             </div>
           ))}
+        </div>
+      </section>
+
+      <section id="demo" className="demo">
+        <div className="sectionHead">
+          <span className="eyebrow small">Product demo</span>
+          <h2>See CritMatch in action.</h2>
+          <p>
+            A short walkthrough of how study teams configure criteria, review matches, and move
+            faster from eligibility to enrollment.
+          </p>
+        </div>
+        <div className="demoShell">
+          <video
+            className="demoVideo"
+            controls
+            preload="metadata"
+            poster="/assets/cm-demo-poster.jpg"
+          >
+            <source src="/assets/cm-demo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </section>
 
