@@ -80,16 +80,17 @@ main { overflow: hidden; }
 }
 
 .nav .brandMark {
-  width: 132px;
+  width: 220px;
   height: 132px;
   border-radius: 22px;
   background: #ffffff;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
-  padding: 12px;
+  padding: 14px 22px;
 }
 
 .nav .brandMark .brandLogo {
   padding: 0;
+  object-fit: contain;
 }
 
 .brandName {
@@ -147,7 +148,7 @@ main { overflow: hidden; }
 
 .navLinks a:hover { opacity: 1; }
 
-.navCta {
+.navLinks a.navCta {
   color: var(--navy);
   background: #ffffff;
   border: 1px solid #ffffff;
@@ -158,18 +159,19 @@ main { overflow: hidden; }
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
-.navCta:hover {
+.navLinks a.navCta:hover {
   opacity: 1;
   background: #f4fbfa;
+  color: var(--navy);
 }
 
 @media (max-width: 820px) {
   .nav { min-height: auto; padding: 18px 6vw; gap: 12px; flex-wrap: wrap; }
-  .nav .brandMark { width: 72px; height: 72px; border-radius: 16px; padding: 8px; }
+  .nav .brandMark { width: 140px; height: 72px; border-radius: 16px; padding: 8px 14px; }
   .nav .brandName { font-size: 22px; }
   .nav .brandSub { font-size: 12px; }
   .navLinks { gap: 18px; font-size: 14px; }
-  .navCta { padding: 8px 16px; }
+  .navLinks a.navCta { padding: 8px 16px; }
 }
 
 .hero {
