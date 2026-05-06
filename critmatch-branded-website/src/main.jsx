@@ -298,16 +298,7 @@ function App() {
       </section>
 
       <footer>
-        <div className="brand footerBrand">
-          <div className="brandMark">
-            <img className="brandLogo" src="/assets/critmatch-logo.png" alt="CritMatch logo" />
-          </div>
-          <div>
-            <div className="brandName">CritMatch</div>
-            <div className="brandSub">Elionyx Health</div>
-          </div>
-        </div>
-        <span>© 2026 Elionyx Health. CritMatch is a work in progress.</span>
+        <span>© 2026 CritMatch — Powered by Elionyx Health.</span>
       </footer>
     </main>
   );
