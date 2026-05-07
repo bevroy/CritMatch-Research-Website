@@ -92,7 +92,7 @@ function App() {
           <a href="#workflow">Workflow</a>
           <a href="#demo">Demo</a>
           <a href="#partners">Partners</a>
-          <a href="#contact" className="navCta">Contact</a>
+          <a href="mailto:info@critmatchresearch.com" className="navCta">Contact</a>
         </div>
       </nav>
 
@@ -108,7 +108,7 @@ function App() {
             study-specific inclusion and exclusion criteria using transparent, EHR-aligned cohort logic.
           </p>
           <div className="heroButtons">
-            <a className="primaryBtn" href="#contact">Request a Demo <ArrowRight size={18} /></a>
+            <a className="primaryBtn" href="mailto:info@critmatchresearch.com?subject=CritMatch%20Demo%20Request">Request a Demo <ArrowRight size={18} /></a>
             <a className="secondaryBtn" href="#product">Explore Platform</a>
           </div>
         </div>
@@ -310,10 +310,13 @@ function App() {
               <textarea name="message" rows="4" required />
             </label>
 
-            <button className="primaryBtn" type="submit">
+            <a
+              className="primaryBtn"
+              href="mailto:info@critmatchresearch.com?subject=CritMatch%20Demo%20Request"
+            >
               Request Demo
               <ArrowRight size={18} />
-            </button>
+            </a>
           </form>
         </div>
       </section>
