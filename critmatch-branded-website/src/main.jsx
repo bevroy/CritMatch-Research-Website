@@ -75,6 +75,27 @@ const competitors = [
 ];
 
 function App() {
+  const handleContactSubmit = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const name = (data.get("name") || "").toString();
+    const email = (data.get("email") || "").toString();
+    const organization = (data.get("organization") || "").toString();
+    const message = (data.get("message") || "").toString();
+    const subject = `CritMatch demo request from ${name || "website visitor"}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Organization: ${organization}`,
+      "",
+      "Message:",
+      message,
+    ].join("\n");
+    window.location.href = `mailto:info@critmatchresearch.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+  };
+
   return (
     <main>
       <nav className="nav">
@@ -279,15 +300,7 @@ function App() {
             </p>
           </div>
 
-          <form
-            className="contactForm"
-            name="contact"
-            method="POST"
-            action="/?submitted=true"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-          >
-            <input type="hidden" name="form-name" value="contact" />
+          <form className="contactForm" name="contact" onSubmit={handleContactSubmit}>
             <p className="hpField">
               <label>
                 Do not fill this out if you are human: <input name="bot-field" />
@@ -314,13 +327,10 @@ function App() {
               <textarea name="message" rows="4" required />
             </label>
 
-            <a
-              className="primaryBtn"
-              href="mailto:info@critmatchresearch.com?subject=CritMatch%20Demo%20Request"
-            >
-              Request Demo
+            <button className="primaryBtn" type="submit">
+              Send Message
               <ArrowRight size={18} />
-            </a>
+            </button>
           </form>
         </div>
       </section>
