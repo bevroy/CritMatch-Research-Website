@@ -493,6 +493,20 @@ p { color: var(--muted); line-height: 1.65; font-size: 17px; }
   cursor: pointer;
 }
 
+.contactForm .primaryBtn[disabled] {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.formStatus {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.formStatusSuccess { color: #4ade80; }
+.formStatusError { color: #f87171; }
+.formStatus a { color: inherit; text-decoration: underline; }
+
 footer {
   padding: 28px 6vw 46px;
   display: flex;

@@ -76,27 +76,36 @@ const competitors = [
 
 function App() {
   const formRef = React.useRef(null);
+  const [status, setStatus] = React.useState("idle"); // idle | submitting | success | error
 
-  const buildMailtoHref = () => {
+  const encodeFormData = (data) =>
+    Array.from(data.entries())
+      .map(
+        ([key, value]) =>
+          encodeURIComponent(key) + "=" + encodeURIComponent(value.toString())
+      )
+      .join("&");
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
     const form = formRef.current;
-    if (!form) return "mailto:info@critmatchresearch.com";
+    if (!form) return;
     const data = new FormData(form);
-    const name = (data.get("name") || "").toString().trim();
-    const email = (data.get("email") || "").toString().trim();
-    const organization = (data.get("organization") || "").toString().trim();
-    const message = (data.get("message") || "").toString().trim();
-    const subject = `CritMatch demo request${name ? ` from ${name}` : ""}`;
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Organization: ${organization}`,
-      "",
-      "Message:",
-      message,
-    ].join("\n");
-    return `mailto:info@critmatchresearch.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+    data.append("form-name", "contact");
+    setStatus("submitting");
+    try {
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodeFormData(data),
+      });
+      if (!res.ok) throw new Error(`Request failed: ${res.status}`);
+      setStatus("success");
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
   };
 
   return (
@@ -307,8 +316,11 @@ function App() {
             className="contactForm"
             name="contact"
             ref={formRef}
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleContactSubmit}
+            data-netlify="true"
+            netlify-honeypot="bot-field"
           >
+            <input type="hidden" name="form-name" value="contact" />
             <p className="hpField">
               <label>
                 Do not fill this out if you are human: <input name="bot-field" />
@@ -335,16 +347,26 @@ function App() {
               <textarea name="message" rows="4" required />
             </label>
 
-            <a
+            <button
               className="primaryBtn"
-              href="mailto:info@critmatchresearch.com"
-              onClick={(e) => {
-                e.currentTarget.href = buildMailtoHref();
-              }}
+              type="submit"
+              disabled={status === "submitting"}
             >
-              Send Message
+              {status === "submitting" ? "Sending..." : "Send Message"}
               <ArrowRight size={18} />
-            </a>
+            </button>
+
+            {status === "success" && (
+              <p role="status" className="formStatus formStatusSuccess">
+                Thanks — your message has been sent. We&rsquo;ll be in touch shortly.
+              </p>
+            )}
+            {status === "error" && (
+              <p role="alert" className="formStatus formStatusError">
+                Something went wrong sending your message. Please email us directly at{" "}
+                <a href="mailto:info@critmatchresearch.com">info@critmatchresearch.com</a>.
+              </p>
+            )}
           </form>
         </div>
       </section>
