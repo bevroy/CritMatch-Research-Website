@@ -92,7 +92,7 @@ function App() {
           <a href="#workflow">Workflow</a>
           <a href="#demo">Demo</a>
           <a href="#partners">Partners</a>
-          <a href="mailto:info@critmatchresearch.com" className="navCta">Contact</a>
+          <a href="#contact" className="navCta">Contact</a>
         </div>
       </nav>
 
@@ -273,6 +273,10 @@ function App() {
             <span className="eyebrow small">Ready to pilot?</span>
             <h2>Bring faster cohort identification to clinical research workflows.</h2>
             <p>Submit your details and the Elionyx Health team will follow up on partnerships and pilot deployment.</p>
+            <p>
+              Or email us directly at{" "}
+              <a href="mailto:info@critmatchresearch.com">info@critmatchresearch.com</a>.
+            </p>
           </div>
 
           <form
