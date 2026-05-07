@@ -75,14 +75,17 @@ const competitors = [
 ];
 
 function App() {
-  const handleContactSubmit = (e) => {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const name = (data.get("name") || "").toString();
-    const email = (data.get("email") || "").toString();
-    const organization = (data.get("organization") || "").toString();
-    const message = (data.get("message") || "").toString();
-    const subject = `CritMatch demo request from ${name || "website visitor"}`;
+  const formRef = React.useRef(null);
+
+  const buildMailtoHref = () => {
+    const form = formRef.current;
+    if (!form) return "mailto:info@critmatchresearch.com";
+    const data = new FormData(form);
+    const name = (data.get("name") || "").toString().trim();
+    const email = (data.get("email") || "").toString().trim();
+    const organization = (data.get("organization") || "").toString().trim();
+    const message = (data.get("message") || "").toString().trim();
+    const subject = `CritMatch demo request${name ? ` from ${name}` : ""}`;
     const body = [
       `Name: ${name}`,
       `Email: ${email}`,
@@ -91,7 +94,7 @@ function App() {
       "Message:",
       message,
     ].join("\n");
-    window.location.href = `mailto:info@critmatchresearch.com?subject=${encodeURIComponent(
+    return `mailto:info@critmatchresearch.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
   };
@@ -300,7 +303,12 @@ function App() {
             </p>
           </div>
 
-          <form className="contactForm" name="contact" onSubmit={handleContactSubmit}>
+          <form
+            className="contactForm"
+            name="contact"
+            ref={formRef}
+            onSubmit={(e) => e.preventDefault()}
+          >
             <p className="hpField">
               <label>
                 Do not fill this out if you are human: <input name="bot-field" />
@@ -327,10 +335,16 @@ function App() {
               <textarea name="message" rows="4" required />
             </label>
 
-            <button className="primaryBtn" type="submit">
+            <a
+              className="primaryBtn"
+              href="mailto:info@critmatchresearch.com"
+              onClick={(e) => {
+                e.currentTarget.href = buildMailtoHref();
+              }}
+            >
               Send Message
               <ArrowRight size={18} />
-            </button>
+            </a>
           </form>
         </div>
       </section>
