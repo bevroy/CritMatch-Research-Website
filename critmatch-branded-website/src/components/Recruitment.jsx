@@ -94,7 +94,7 @@ const Recruitment = () => {
               <li>Innovation and AI adoption initiatives</li>
             </ul>
             <div style={{fontSize: 16, marginBottom: 12}}>
-              If your organization is interested in participating in the validation of next-generation cohort discovery technology, please comment below or send a direct message.
+              If your organization is interested in participating in the validation of next-generation cohort discovery technology, please contact us.
             </div>
             <div style={{marginTop: 8, color: "#35777B", fontSize: 14}}>
               #ClinicalResearch #DigitalHealth #HealthcareInnovation #AIinHealthcare #ClinicalTrials #PatientRecruitment #HealthIT #ResearchOperations #PopulationHealth #MedicalInnovation #CritMatch #ClinicalInformatics
