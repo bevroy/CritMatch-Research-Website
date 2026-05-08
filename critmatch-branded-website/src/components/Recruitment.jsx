@@ -46,9 +46,9 @@ const Recruitment = () => {
               <div style={{fontWeight: 700, fontSize: 22, marginBottom: 2, color: '#184d47'}}>CritMatch Validation Study Site Recruitment</div>
               <div style={{fontStyle: "italic", fontSize: 16, color: "#24706b", marginBottom: 16}}>Elionyx Health, LLC</div>
             </div>
-            <div style={{fontSize: 16, marginBottom: 16, color: "#184d47"}}>
-              <p style={{margin: 0}}>We are seeking healthcare organizations and research sites to participate in the validation study for <b>CritMatch</b> — a clinical cohort identification and research matching platform developed by Elionyx Health, LLC.</p>
-              <p style={{margin: 0}}>CritMatch is designed to help organizations identify eligible patient populations for clinical research and operational initiatives using intelligent EMR/EHR-based cohort discovery.</p>
+            <div style={{fontSize: 16, marginBottom: 16, color: "#184d47", fontFamily: 'inherit', fontWeight: 400}}>
+              <p style={{margin: 0, fontFamily: 'inherit', fontWeight: 400, color: 'inherit'}}>We are seeking healthcare organizations and research sites to participate in the validation study for <b>CritMatch</b> — a clinical cohort identification and research matching platform developed by Elionyx Health, LLC.</p>
+              <p style={{margin: 0, fontFamily: 'inherit', fontWeight: 400, color: 'inherit'}}>CritMatch is designed to help organizations identify eligible patient populations for clinical research and operational initiatives using intelligent EMR/EHR-based cohort discovery.</p>
             </div>
             <div style={{fontWeight: 600, marginBottom: 4}}>We are currently recruiting:</div>
             <ul style={{marginTop: 0, marginBottom: 16, paddingLeft: 24}}>
