@@ -1,4 +1,5 @@
 import React from "react";
+import Recruitment from "./components/Recruitment";
 import { createRoot } from "react-dom/client";
 import {
   Activity,
@@ -141,7 +142,7 @@ function App() {
             study-specific inclusion and exclusion criteria using transparent, EHR-aligned cohort logic.
           </p>
           <div className="heroButtons">
-            <a className="primaryBtn" href="mailto:info@critmatchresearch.com?subject=CritMatch%20Demo%20Request">Request a Demo <ArrowRight size={18} /></a>
+            <a className="primaryBtn" href="#contact">Request a Demo <ArrowRight size={18} /></a>
             <a className="secondaryBtn" href="#product">Explore Platform</a>
           </div>
         </div>
@@ -244,6 +245,11 @@ function App() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Recruitment Section - just above Product Demo */}
+      <section id="recruitment">
+        <Recruitment />
       </section>
 
       <section id="demo" className="demo">
@@ -363,8 +369,7 @@ function App() {
             )}
             {status === "error" && (
               <p role="alert" className="formStatus formStatusError">
-                Something went wrong sending your message. Please email us directly at{" "}
-                <a href="mailto:info@critmatchresearch.com">info@critmatchresearch.com</a>.
+                Something went wrong sending your message. If the issue persists, contact us at <span style={{fontWeight:600}}>info@critmatchresearch.com</span>.
               </p>
             )}
           </form>
