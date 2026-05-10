@@ -7,37 +7,14 @@ const Recruitment = () => {
 
   return (
     <div style={{maxWidth: 700, margin: "2rem auto"}}>
-      <div
-        style={{
-          background: "#e6f4f1",
-          border: "2px solid #b7e0d8",
-          borderRadius: 16,
-          boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
-          padding: open ? "0 0 1.5rem 0" : 0,
-          transition: "box-shadow 0.2s"
-        }}
-      >
+      <div className="recruitment-dropdown-container">
         <button
+          className="recruitment-dropdown-btn"
           onClick={() => setOpen((o) => !o)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            width: "100%",
-            background: "none",
-            border: "none",
-            padding: "1.25rem 2rem 1.25rem 1.5rem",
-            fontSize: "1.15rem",
-            fontWeight: 600,
-            color: "#24706b",
-            cursor: "pointer",
-            borderRadius: 16,
-            outline: "none"
-          }}
           aria-expanded={open}
           aria-controls="recruitment-content"
         >
-          <span>CritMatch Validation Study Site Recruitment</span>
+          <span className="recruitment-dropdown-title">CritMatch Validation Study Site Recruitment</span>
           <span style={{fontSize: "1.5rem", marginLeft: 12}}>{open ? "▲" : "▼"}</span>
         </button>
         {open && (

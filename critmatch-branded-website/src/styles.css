@@ -1,3 +1,40 @@
+/* Recruitment Dropdown Custom Styles */
+.recruitment-dropdown-container {
+  background: #184d47; /* dark green */
+  border: 2.5px solid var(--teal);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 0;
+  transition: box-shadow 0.2s;
+}
+
+.recruitment-dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.25rem 2rem 1.25rem 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--teal);
+  cursor: pointer;
+  border-radius: 16px;
+  outline: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.recruitment-dropdown-btn:focus, .recruitment-dropdown-btn:hover {
+  background: rgba(39,195,180,0.08);
+  color: #7bdff2;
+}
+
+.recruitment-dropdown-title {
+  color: #7bdff2; /* light teal */
+  font-family: inherit;
+  font-weight: 700;
+}
 :root {
   --navy: #061827;
   --navy-2: #0a2236;
