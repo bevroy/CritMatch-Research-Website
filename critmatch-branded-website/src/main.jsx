@@ -118,7 +118,7 @@ function App() {
           </div>
           <div>
             <div className="brandName">CritMatch</div>
-            <div className="brandSub">End-to-End Clinical Research Platform</div>
+            <div className="brandSub">Includes CRAN: Community Research Access Network</div>
           </div>
         </div>
         <div className="navLinks">
@@ -186,6 +186,31 @@ function App() {
             <div><span>ICD-10 search</span><b>Complete</b></div>
             <div><span>SNOMED expansion</span><b>Enabled</b></div>
             <div><span>Eligibility review</span><b>Ready</b></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="problem">
+        <div className="sectionHead">
+          <span className="eyebrow small">What&apos;s New</span>
+          <h2>New CRAN capabilities added today.</h2>
+          <p>
+            CritMatch now includes expanded Community Research Access Network workflows and
+            intelligence modules for equitable research participation at scale.
+          </p>
+        </div>
+        <div className="statGrid">
+          <div>
+            <strong>Community Access Network</strong>
+            <span>Community Partner Network and Navigator Workspace for referral and barrier management.</span>
+          </div>
+          <div>
+            <strong>Equity & Readiness Intelligence</strong>
+            <span>Equity Scorecards plus RWD Readiness Engine for feasibility and sponsor-ready profiling.</span>
+          </div>
+          <div>
+            <strong>ROIE Expansion</strong>
+            <span>Opportunity feed now includes NCT IDs, recruiting status, study links, and contact details.</span>
           </div>
         </div>
       </section>
