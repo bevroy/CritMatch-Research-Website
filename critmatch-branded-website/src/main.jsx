@@ -29,7 +29,7 @@ const features = [
   {
     icon: <Search />,
     title: "ROIE",
-    text: "Research Opportunity Intelligence Engine that matches sponsors, sites, and studies with local population fit, including recruiting status and study-contact context."
+    text: "Research Opportunity Intelligence Engine that continuously ingests public ClinicalTrials.gov records, normalizes NCT metadata, and matches sponsors, sites, and studies with local population fit, recruiting status, and study-contact context."
   },
   {
     icon: <Database />,
@@ -105,6 +105,7 @@ const featureMatrix = [
   { feature: "Studies workspace and protocol operations", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
   { feature: "Feasibility workflows", trinetx: true, deep6: false, slicerdicer: false, oracle: true, critmatch: true },
   { feature: "ROIE opportunity intelligence", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
+  { feature: "ClinicalTrials.gov ingestion with NCT-linked workflow context", trinetx: true, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
   { feature: "RWD readiness profiling", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
   { feature: "Community referral network tools", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
   { feature: "Navigator barrier-resolution workspace", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
@@ -179,6 +180,9 @@ function App() {
           <p>
             CritMatch helps health systems, researchers, and sponsors identify patients who meet
             study-specific inclusion and exclusion criteria using transparent, EHR-aligned cohort logic.
+          </p>
+          <p className="heroTrustline">
+            Opportunity intelligence is informed by public ClinicalTrials.gov study metadata.
           </p>
           <div className="heroButtons">
             <a className="primaryBtn" href="#contact">Request a Demo <ArrowRight size={18} /></a>
