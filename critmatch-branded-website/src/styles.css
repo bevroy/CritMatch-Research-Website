@@ -405,10 +405,29 @@ p { color: var(--muted); line-height: 1.65; font-size: 17px; }
 }
 .comparisonRow:last-child { border-bottom: 0; }
 .comparisonRow strong { color: var(--white); }
+.comparisonDetailLine {
+  display: block;
+  line-height: 1.55;
+}
+.comparisonDetailLine + .comparisonDetailLine {
+  margin-top: 10px;
+}
+.comparisonDetailLine b {
+  color: var(--white);
+}
+.comparisonDetailLine.critmatch {
+  color: color-mix(in oklab, var(--teal) 55%, var(--white) 45%);
+}
 .comparisonRow.highlight {
   background: linear-gradient(90deg, rgba(39,195,180,0.2), rgba(123,223,242,0.08));
 }
 .comparisonRow.highlight strong, .comparisonRow.highlight span { color: var(--white); }
+
+.positioningBottomLine {
+  max-width: 880px;
+  margin: 20px auto 0;
+  color: var(--white);
+}
 
 .partners {
   display: grid;

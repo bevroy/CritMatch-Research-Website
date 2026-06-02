@@ -92,12 +92,47 @@ const steps = [
   "Export or route for study follow-up"
 ];
 
-const competitors = [
-  ["TriNetX", "Research network and feasibility analytics"],
-  ["Deep 6 AI", "AI-assisted patient matching"],
-  ["Epic SlicerDicer", "EHR-native reporting and analytics"],
-  ["Oracle Health tools", "Population health and cohort analytics"],
-  ["CritMatch", "Integrated matching, readiness, community navigation, and equity operations in one EHR-connected workflow"]
+const enterpriseComparisons = [
+  {
+    capability: "Cohort identification and criteria transparency",
+    typical: "Strong analytics or AI matching, but limited end-to-end protocol traceability in one workflow.",
+    critmatch: "Transparent inclusion and exclusion logic, terminology expansion, auditable matching, and export-ready cohort outputs."
+  },
+  {
+    capability: "Study and site operations",
+    typical: "Trial setup and operational context often live in separate systems.",
+    critmatch: "Unified Studies workspace that connects protocol context to feasibility, EDC, finance, and reporting."
+  },
+  {
+    capability: "Feasibility and readiness intelligence",
+    typical: "Feasibility estimates without operational readiness depth.",
+    critmatch: "Feasibility plus RWD Readiness profiles for sponsor-facing planning and site activation confidence."
+  },
+  {
+    capability: "Opportunity intelligence (ROIE)",
+    typical: "Trial-search data disconnected from internal execution workflows.",
+    critmatch: "Sponsor, site, and study opportunity intelligence with recruiting status, links, and study-contact context."
+  },
+  {
+    capability: "Execution and compliance workflows",
+    typical: "Fragmented handoffs across EDC, participant tracking, and finance tools.",
+    critmatch: "Integrated EDC, participant tracking, and CTFMS workflows with aligned operational and financial visibility."
+  },
+  {
+    capability: "Community access and participant navigation",
+    typical: "Limited built-in support for community referrals and barrier resolution.",
+    critmatch: "Community Network plus Navigator Workspace for referral coordination and closed-loop barrier management."
+  },
+  {
+    capability: "Equity performance management",
+    typical: "Retrospective demographic reporting only.",
+    critmatch: "Equity Scorecards with subgroup conversion monitoring and intervention impact tracking."
+  },
+  {
+    capability: "Operational reporting",
+    typical: "Single-domain dashboards without cross-workflow visibility.",
+    critmatch: "Results and reporting across recruitment, readiness, execution, and equity workflows."
+  }
 ];
 
 function App() {
@@ -303,20 +338,34 @@ function App() {
       <section className="positioning">
         <div className="sectionHead">
           <span className="eyebrow small">Competitive position</span>
-          <h2>Built for the gap between point solutions and fragmented trial operations.</h2>
+          <h2>One platform across the full clinical research workflow.</h2>
           <p>
-            CritMatch differentiates by unifying recruitment intelligence, operational readiness,
-            community referral workflows, and equity performance into one EHR-connected platform.
+            Most alternatives solve one slice of trial operations. CritMatch combines cohort
+            discovery, study operations, execution workflows, and equity performance in a single
+            EHR-connected platform.
+          </p>
+          <p>
+            Compared with point solutions from vendors such as TriNetX, Deep 6 AI, Epic
+            SlicerDicer, and Oracle Health tools, CritMatch provides one connected operating layer
+            from identification through enrollment.
           </p>
         </div>
         <div className="comparison">
-          {competitors.map(([name, text]) => (
-            <div className={name === "CritMatch" ? "comparisonRow highlight" : "comparisonRow"} key={name}>
-              <strong>{name}</strong>
-              <span>{text}</span>
+          {enterpriseComparisons.map((row) => (
+            <div className="comparisonRow" key={row.capability}>
+              <strong>{row.capability}</strong>
+              <span>
+                <span className="comparisonDetailLine"><b>Typical alternatives:</b> {row.typical}</span>
+                <span className="comparisonDetailLine critmatch"><b>CritMatch:</b> {row.critmatch}</span>
+              </span>
             </div>
           ))}
         </div>
+        <p className="positioningBottomLine">
+          <strong>Bottom line:</strong> CritMatch is built for teams that need more than point
+          solutions: one platform spanning identification, readiness, execution, community access,
+          and equitable enrollment outcomes.
+        </p>
       </section>
 
       <section id="partners" className="partners">
