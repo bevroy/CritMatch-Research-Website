@@ -395,33 +395,89 @@ p { color: var(--muted); line-height: 1.65; font-size: 17px; }
 .step svg { color: var(--teal); }
 
 .comparison { max-width: 880px; margin: auto; overflow: hidden; }
-.comparisonRow {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 20px;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--border);
-  color: var(--muted);
+
+.comparisonTableWrap {
+  overflow-x: auto;
+  border-radius: 22px;
+  border: 1px solid var(--border);
 }
-.comparisonRow:last-child { border-bottom: 0; }
-.comparisonRow strong { color: var(--white); }
-.comparisonDetailLine {
-  display: block;
-  line-height: 1.55;
+
+.comparisonTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 860px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
 }
-.comparisonDetailLine + .comparisonDetailLine {
-  margin-top: 10px;
-}
-.comparisonDetailLine b {
+
+.comparisonTable thead th {
+  position: sticky;
+  top: 0;
+  background: rgba(6, 24, 39, 0.96);
   color: var(--white);
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
 }
-.comparisonDetailLine.critmatch {
-  color: color-mix(in oklab, var(--teal) 55%, var(--white) 45%);
+
+.comparisonTable th,
+.comparisonTable td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
 }
-.comparisonRow.highlight {
-  background: linear-gradient(90deg, rgba(39,195,180,0.2), rgba(123,223,242,0.08));
+
+.comparisonTable tbody tr:last-child th,
+.comparisonTable tbody tr:last-child td {
+  border-bottom: 0;
 }
-.comparisonRow.highlight strong, .comparisonRow.highlight span { color: var(--white); }
+
+.comparisonTable th:first-child {
+  text-align: left;
+  min-width: 320px;
+}
+
+.comparisonTable tbody th {
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.comparisonTable tbody tr:nth-child(2n) {
+  background: rgba(255,255,255,0.03);
+}
+
+.comparisonTable td:last-child,
+.comparisonTable th:last-child {
+  background: rgba(39,195,180,0.1);
+}
+
+.checkMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.checkMark.yes {
+  color: #04231f;
+  background: linear-gradient(135deg, var(--teal), var(--cyan));
+}
+
+.checkMark.no {
+  color: var(--muted);
+  background: rgba(255,255,255,0.08);
+}
+
+.comparisonDisclaimer {
+  max-width: 880px;
+  margin: 12px auto 0;
+  color: var(--muted);
+  font-size: 13px;
+}
 
 .positioningBottomLine {
   max-width: 880px;
@@ -571,6 +627,8 @@ footer {
   .hero, .workflow, .partners { grid-template-columns: 1fr; }
   .featureGrid, .statGrid { grid-template-columns: 1fr; }
   .criteriaGrid, .matchPanel { grid-template-columns: 1fr; }
+  .comparisonTable { min-width: 740px; }
+  .comparisonTable th:first-child { min-width: 250px; }
   .ctaBody { grid-template-columns: 1fr; }
   .cta { margin-left: 4vw; margin-right: 4vw; }
   footer { flex-direction: column; align-items: flex-start; gap: 18px; }

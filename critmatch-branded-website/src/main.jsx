@@ -92,47 +92,26 @@ const steps = [
   "Export or route for study follow-up"
 ];
 
-const enterpriseComparisons = [
-  {
-    capability: "Cohort identification and criteria transparency",
-    typical: "Strong analytics or AI matching, but limited end-to-end protocol traceability in one workflow.",
-    critmatch: "Transparent inclusion and exclusion logic, terminology expansion, auditable matching, and export-ready cohort outputs."
-  },
-  {
-    capability: "Study and site operations",
-    typical: "Trial setup and operational context often live in separate systems.",
-    critmatch: "Unified Studies workspace that connects protocol context to feasibility, EDC, finance, and reporting."
-  },
-  {
-    capability: "Feasibility and readiness intelligence",
-    typical: "Feasibility estimates without operational readiness depth.",
-    critmatch: "Feasibility plus RWD Readiness profiles for sponsor-facing planning and site activation confidence."
-  },
-  {
-    capability: "Opportunity intelligence (ROIE)",
-    typical: "Trial-search data disconnected from internal execution workflows.",
-    critmatch: "Sponsor, site, and study opportunity intelligence with recruiting status, links, and study-contact context."
-  },
-  {
-    capability: "Execution and compliance workflows",
-    typical: "Fragmented handoffs across EDC, participant tracking, and finance tools.",
-    critmatch: "Integrated EDC, participant tracking, and CTFMS workflows with aligned operational and financial visibility."
-  },
-  {
-    capability: "Community access and participant navigation",
-    typical: "Limited built-in support for community referrals and barrier resolution.",
-    critmatch: "Community Network plus Navigator Workspace for referral coordination and closed-loop barrier management."
-  },
-  {
-    capability: "Equity performance management",
-    typical: "Retrospective demographic reporting only.",
-    critmatch: "Equity Scorecards with subgroup conversion monitoring and intervention impact tracking."
-  },
-  {
-    capability: "Operational reporting",
-    typical: "Single-domain dashboards without cross-workflow visibility.",
-    critmatch: "Results and reporting across recruitment, readiness, execution, and equity workflows."
-  }
+const comparisonColumns = [
+  { id: "trinetx", label: "TriNetX" },
+  { id: "deep6", label: "Deep 6 AI" },
+  { id: "slicerdicer", label: "Epic SlicerDicer" },
+  { id: "oracle", label: "Oracle Health tools" },
+  { id: "critmatch", label: "CritMatch" }
+];
+
+const featureMatrix = [
+  { feature: "Cohort builder and criteria matching", trinetx: true, deep6: true, slicerdicer: true, oracle: true, critmatch: true },
+  { feature: "Studies workspace and protocol operations", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
+  { feature: "Feasibility workflows", trinetx: true, deep6: false, slicerdicer: false, oracle: true, critmatch: true },
+  { feature: "ROIE opportunity intelligence", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
+  { feature: "RWD readiness profiling", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
+  { feature: "Community referral network tools", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
+  { feature: "Navigator barrier-resolution workspace", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
+  { feature: "Equity scorecards and conversion analytics", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
+  { feature: "EDC workflows", trinetx: false, deep6: false, slicerdicer: false, oracle: true, critmatch: true },
+  { feature: "Finance (CTFMS)", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
+  { feature: "Cross-workflow operational results", trinetx: true, deep6: false, slicerdicer: true, oracle: true, critmatch: true }
 ];
 
 function App() {
@@ -351,16 +330,37 @@ function App() {
           </p>
         </div>
         <div className="comparison">
-          {enterpriseComparisons.map((row) => (
-            <div className="comparisonRow" key={row.capability}>
-              <strong>{row.capability}</strong>
-              <span>
-                <span className="comparisonDetailLine"><b>Typical alternatives:</b> {row.typical}</span>
-                <span className="comparisonDetailLine critmatch"><b>CritMatch:</b> {row.critmatch}</span>
-              </span>
-            </div>
-          ))}
+          <div className="comparisonTableWrap">
+            <table className="comparisonTable">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  {comparisonColumns.map((col) => (
+                    <th key={col.id}>{col.label}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {featureMatrix.map((row) => (
+                  <tr key={row.feature}>
+                    <th scope="row">{row.feature}</th>
+                    {comparisonColumns.map((col) => {
+                      const enabled = row[col.id];
+                      return (
+                        <td key={`${row.feature}-${col.id}`} aria-label={`${col.label}: ${enabled ? "Yes" : "No"}`}>
+                          <span className={`checkMark ${enabled ? "yes" : "no"}`}>{enabled ? "✓" : "-"}</span>
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
+        <p className="comparisonDisclaimer">
+          Matrix reflects commonly available feature coverage in standard product deployments.
+        </p>
         <p className="positioningBottomLine">
           <strong>Bottom line:</strong> CritMatch is built for teams that need more than point
           solutions: one platform spanning identification, readiness, execution, community access,
