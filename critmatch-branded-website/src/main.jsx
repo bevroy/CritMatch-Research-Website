@@ -27,6 +27,31 @@ import "./styles.css";
 
 const features = [
   {
+    icon: <Search />,
+    title: "ROIE",
+    text: "Research Opportunity Intelligence Engine that matches sponsors, sites, and studies with local population fit, including recruiting status and study-contact context."
+  },
+  {
+    icon: <Database />,
+    title: "RWD Readiness",
+    text: "Assess site readiness, estimate protocol-fit populations, and generate sponsor-ready operational profiles from real-world data."
+  },
+  {
+    icon: <Users />,
+    title: "Community Network",
+    text: "Coordinate referrals with community organizations and safety-net partners to broaden research access."
+  },
+  {
+    icon: <Hospital />,
+    title: "Navigator Workspace",
+    text: "Track and resolve participant barriers such as transportation, language, childcare, and digital access in one workflow."
+  },
+  {
+    icon: <Sparkles />,
+    title: "Equity Scorecards",
+    text: "Monitor subgroup conversion and intervention impact with continuous equity-aware enrollment analytics."
+  },
+  {
     icon: <Puzzle />,
     title: "Cohort Builder",
     text: "The core of CritMatch. Define inclusion and exclusion criteria, expand them with terminology services, and run them against the EHR to surface candidate participants for your trial.",
@@ -72,7 +97,7 @@ const competitors = [
   ["Deep 6 AI", "AI-assisted patient matching"],
   ["Epic SlicerDicer", "EHR-native reporting and analytics"],
   ["Oracle Health tools", "Population health and cohort analytics"],
-  ["CritMatch", "Transparent EHR-integrated criteria matching"]
+  ["CritMatch", "Integrated matching, readiness, community navigation, and equity operations in one EHR-connected workflow"]
 ];
 
 function App() {
@@ -192,31 +217,6 @@ function App() {
 
       <section className="problem">
         <div className="sectionHead">
-          <span className="eyebrow small">What&apos;s New</span>
-          <h2>New CRAN capabilities added today.</h2>
-          <p>
-            CritMatch now includes expanded Community Research Access Network workflows and
-            intelligence modules for equitable research participation at scale.
-          </p>
-        </div>
-        <div className="statGrid">
-          <div>
-            <strong>Community Access Network</strong>
-            <span>Community Partner Network and Navigator Workspace for referral and barrier management.</span>
-          </div>
-          <div>
-            <strong>Equity & Readiness Intelligence</strong>
-            <span>Equity Scorecards plus RWD Readiness Engine for feasibility and sponsor-ready profiling.</span>
-          </div>
-          <div>
-            <strong>ROIE Expansion</strong>
-            <span>Opportunity feed now includes NCT IDs, recruiting status, study links, and contact details.</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="problem">
-        <div className="sectionHead">
           <span className="eyebrow small">The problem</span>
           <h2>Clinical trial recruitment still depends on manual effort.</h2>
           <p>
@@ -236,8 +236,9 @@ function App() {
           <span className="eyebrow small">The platform</span>
           <h2>An end-to-end clinical research platform.</h2>
           <p>
-            CritMatch now spans the full study lifecycle — from cohort discovery to feasibility,
-            EDC, and finance — anchored by the Cohort Builder at its core.
+            CritMatch now spans the full study lifecycle with CRAN capabilities integrated directly
+            into the platform, from opportunity intelligence and readiness to community navigation,
+            equity analytics, cohort discovery, feasibility, EDC, and finance.
           </p>
         </div>
         <div className="featureGrid">
@@ -302,7 +303,11 @@ function App() {
       <section className="positioning">
         <div className="sectionHead">
           <span className="eyebrow small">Competitive position</span>
-          <h2>Built for the gap between static reports and enterprise trial platforms.</h2>
+          <h2>Built for the gap between point solutions and fragmented trial operations.</h2>
+          <p>
+            CritMatch differentiates by unifying recruitment intelligence, operational readiness,
+            community referral workflows, and equity performance into one EHR-connected platform.
+          </p>
         </div>
         <div className="comparison">
           {competitors.map(([name, text]) => (
