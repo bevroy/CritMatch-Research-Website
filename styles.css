@@ -79,10 +79,24 @@ a {
   letter-spacing: 0.01em;
 }
 
+.logo-stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.18rem;
+}
+
 .logo-text {
   font-size: 1.03rem;
   font-weight: 700;
   line-height: 1;
+}
+
+.logo-subtext {
+  font-size: 0.68rem;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .site-header .logo-text {
@@ -90,20 +104,19 @@ a {
 }
 
 .logo-mark {
-  width: 2.1rem;
-  height: 2.1rem;
+  width: 6.1rem;
+  height: 1.58rem;
   display: inline-grid;
   place-items: center;
-  border-radius: 999px;
-  background: var(--ink);
-  color: #fff;
-  font-size: 0.78rem;
+  border-radius: 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
   overflow: hidden;
 }
 
 .site-header .logo-mark {
-  width: 2.3rem;
-  height: 2.3rem;
+  width: 7rem;
+  height: 1.85rem;
 }
 
 .logo-image {
@@ -114,7 +127,7 @@ a {
 }
 
 .site-header .logo-image {
-  padding: 0.16rem;
+  padding: 0.1rem 0.28rem;
 }
 
 .footer-brand-mark .logo-image {
@@ -346,8 +359,12 @@ textarea {
     font-weight: 650;
   }
 
+  .logo-subtext {
+    font-size: 0.6rem;
+  }
+
   .site-header .logo-image {
-    padding: 0.12rem;
+    padding: 0.08rem 0.2rem;
   }
 
   .footer-brand-mark .logo-image {
@@ -355,8 +372,8 @@ textarea {
   }
 
   .site-header .logo-mark {
-    width: 2rem;
-    height: 2rem;
+    width: 5.8rem;
+    height: 1.55rem;
   }
 
   .footer-brand-mark {
