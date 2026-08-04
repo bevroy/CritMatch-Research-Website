@@ -158,7 +158,7 @@ function App() {
           </div>
           <div>
             <div className="brandName">CritMatch</div>
-            <div className="brandSub">Includes CRAN: Community Research Access Network</div>
+            <div className="brandSub">Clinical research access platform</div>
           </div>
         </div>
         <div className="navLinks">
@@ -254,9 +254,8 @@ function App() {
           <span className="eyebrow small">The platform</span>
           <h2>An end-to-end clinical research platform.</h2>
           <p>
-            CritMatch now spans the full study lifecycle with CRAN capabilities integrated directly
-            into the platform, from opportunity intelligence and readiness to community navigation,
-            equity analytics, cohort discovery, feasibility, EDC, and finance.
+            CritMatch now spans the full study lifecycle, from opportunity intelligence and readiness
+            to community navigation, equity analytics, cohort discovery, feasibility, EDC, and finance.
           </p>
         </div>
         <div className="featureGrid">
