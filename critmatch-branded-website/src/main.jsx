@@ -249,7 +249,7 @@ function App() {
           <h2>An end-to-end clinical research platform.</h2>
           <p>
             CritMatch now spans the full study lifecycle, from opportunity intelligence and readiness
-            to community navigation, equity analytics, cohort discovery, feasibility, EDC, and finance.
+            to navigator workflows, equity analytics, cohort discovery, feasibility, EDC, and finance.
           </p>
         </div>
         <div className="featureGrid">
