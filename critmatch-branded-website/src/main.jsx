@@ -152,7 +152,7 @@ function App() {
           </div>
           <div>
             <div className="brandName">CritMatch</div>
-            <div className="brandSub">Clinical research access platform</div>
+            <div className="brandSub">One platform for the full clinical research lifecycle</div>
           </div>
         </div>
         <div className="navLinks">
