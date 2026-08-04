@@ -37,11 +37,6 @@ const features = [
     text: "Assess site readiness, estimate protocol-fit populations, and generate sponsor-ready operational profiles from real-world data."
   },
   {
-    icon: <Users />,
-    title: "Community Network",
-    text: "Coordinate referrals with community organizations and safety-net partners to broaden research access."
-  },
-  {
     icon: <Hospital />,
     title: "Navigator Workspace",
     text: "Track and resolve participant barriers such as transportation, language, childcare, and digital access in one workflow."
@@ -107,7 +102,6 @@ const featureMatrix = [
   { feature: "ROIE opportunity intelligence", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
   { feature: "ClinicalTrials.gov ingestion with NCT-linked workflow context", trinetx: true, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
   { feature: "RWD readiness profiling", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
-  { feature: "Community referral network tools", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
   { feature: "Navigator barrier-resolution workspace", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
   { feature: "Equity scorecards and conversion analytics", trinetx: false, deep6: false, slicerdicer: false, oracle: false, critmatch: true },
   { feature: "EDC workflows", trinetx: false, deep6: false, slicerdicer: false, oracle: true, critmatch: true },
